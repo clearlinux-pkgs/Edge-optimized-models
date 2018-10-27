@@ -1,0 +1,4 @@
+mkdir -p %{buildroot}/usr/share/openvino/models
+find . -mindepth 1 -maxdepth 1 -type d | while IFS= read -r model; do
+  cp -a "$model" %{buildroot}/usr/share/openvino/models/
+done
